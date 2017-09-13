@@ -83,7 +83,7 @@ avltree* insert(avltree* node,int val)
 	}
 	node->height=max(height(node->left),height(node->right))+1;
 	bal_node=balance(node);
-	cout<<"Balance Factor: "<<bal_node<<endl;
+	cout<<"Balance Factor of "<<node->key<<"is: "<<bal_node<<endl;
 	if((bal_node>1)&&(val<node->left->key) )
 		return right_rotate(node);
 	if((bal_node<-1)&&(val>node->right->key))
@@ -133,6 +133,6 @@ int main()
 	}*/
 	cout<<endl<<"Inorder Traversal of tree: "<<endl;
 	inorderTrav(root);
-	
+	free(root);
 	
 }
